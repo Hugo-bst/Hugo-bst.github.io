@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/*  Menu */
+.menu {
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: 0 10px;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: transparent;
+    color: #1a1a1a;
+    z-index: 3;
+}
+
+.menu ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px;
+    color: #1a1a1a;
+}
+
+.menu ul li a:hover {
+    color: #d5ac4c;
+    border-radius: 5px;
+}
+
+/*Menu Deroulant */
+.menu .dropdown {
+    position: relative;
+}
+
+.menu .submenu,
+.menu .submenufilms {
+    display: none; 
+    position: absolute;
+    background-color: rgba(24, 26, 24, 0.4);
+    padding: 0;
+    margin: 20px 0;
+    z-index: 2;
+    width: 100%;
+}
+
+.menu .submenu li,
+.menu .submenufilms li {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu .submenu li a,
+.menu .submenufilms li a {
+    text-decoration: none;
+    color: #d5ac4c;
+}
+
+.menu .submenu li a:hover,
+.menu .submenufilms li a:hover {
+    color: #d5ac4c;
+    border-radius: 5px;
+}
+
+
+.menu .dropdown:hover .submenu,
+.menu .dropdown:hover .submenufilms {
+    display: block;
+}
+
+#hero {
+    background-image: url("./media/img_hero.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
