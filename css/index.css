@@ -21,7 +21,7 @@ body {
     padding: 0 10px;
     border-radius: 10px;
     justify-content: center;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.05);
     color: #1a1a1a;
     z-index: 3;
 }
@@ -53,7 +53,7 @@ body {
 .menu .submenufilms {
     display: none; 
     position: absolute;
-    background-color: rgba(24, 26, 24, 0.4);
+    background-color: rgba(0, 0, 0, 0.05);;
     padding: 0;
     margin: 20px 0;
     z-index: 2;
@@ -69,7 +69,7 @@ body {
 .menu .submenu li a,
 .menu .submenufilms li a {
     text-decoration: none;
-    color: #d5ac4c;
+    color: #1a1a1a;
 }
 
 .menu .submenu li a:hover,
@@ -84,9 +84,55 @@ body {
     display: block;
 }
 
+/* Conteneur principal */
 #hero {
-    background-image: url("./media/img_hero.jpeg");
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+    position: relative; /* Nécessaire pour positionner les enfants */
+    height: 100vh; /* Pleine hauteur de l'écran */
+    margin-top: 60px; /* Marges pour espacer */
+    display: flex; /* Centrer le contenu */
+    align-items: center; /* Aligner verticalement */
+    justify-content: center; /* Centrer horizontalement */
+    background-color: #f0f0f0; /* Couleur de fond de secours si l'image ne charge pas */
+    overflow: hidden; /* Évite les débordements */
 }
+
+/* Image de fond */
+#hero img {
+    position: absolute;
+    top: 0;
+    right: -20px; /* Décalage léger à droite */
+    height: 100%; /* S'adapte à la hauteur du conteneur */
+    border-top-right-radius: 1em; /* Coins arrondis en haut à droite */
+    border-bottom-right-radius: 1em; /* Coins arrondis en bas à droite */
+    object-fit: cover; /* Gère le recadrage pour garder les proportions */
+    z-index: -1; /* Place l'image derrière le contenu */
+}
+
+/* Titre */
+#hero h1 {
+    position: relative;
+    display: inline-block; /* Ajuste la largeur au texte */
+    font-size: 3rem; /* Taille du texte */
+    font-weight: bold;
+    color: white; /* Couleur visible sur l'image */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Ajoute une ombre pour le contraste */
+    padding: 0.5em 1em; /* Ajoute de l'espace autour du texte */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le texte */
+    border-radius: 0.5em; /* Coins arrondis pour le titre */
+}
+
+/* Ligne sous le titre */
+#hero h1::after {
+    content: ""; /* Affiche l'élément */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centre horizontalement */
+    bottom: -0.5em; /* Distance sous le texte */
+    width: 80%; /* Largeur de la ligne */
+    height: 4px; /* Épaisseur de la ligne */
+    background-color: #f0c987; /* Couleur de la ligne */
+    z-index: -1; /* Derrière le texte */
+}
+
+  
+  
